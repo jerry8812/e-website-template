@@ -1,0 +1,19 @@
+@import 'variables';
+
+//partials
+@import 'common';
+@import 'global';
+@import 'normalize';
+@import 'media';
+@import 'fonts';
+
+@import './components/navbar';
+@import './components/sidebar';
+@import './animations/animation-sidebar';
+
+body {
+  font-family: $header_font;
+}
+i {
+  font-family: $icon_font;
+}

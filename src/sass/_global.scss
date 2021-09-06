@@ -1,0 +1,18 @@
+.firstnav{
+  li{
+    line-height: 2.4rem;
+    font-size: 1rem;  
+    letter-spacing: .14rem;
+    font-family: $header_font;
+    text-transform: uppercase;
+  }
+}
+.secondnav{
+  li{
+    line-height: 2.2rem;
+    font-size: 1.05rem;
+    letter-spacing: 1px;
+    font-family: $nav_second_font;
+    text-transform: capitalize;
+  }
+}

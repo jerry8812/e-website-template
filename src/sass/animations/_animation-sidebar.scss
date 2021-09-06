@@ -1,0 +1,8 @@
+.secondnavani-enter {
+  max-height: 0;
+  overflow: hidden;
+}
+.secondnavani-enter-active {
+  max-height: 20rem;
+  transition: all 400ms linear;
+}
