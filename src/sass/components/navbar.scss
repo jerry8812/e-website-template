@@ -1,110 +1,145 @@
-.navbar {
-  display: flex;
-  align-items: center;
-  width: 88%;
-  margin: 2rem auto 0;
-  height: 5rem;
-  //css for logo
-  .logo a{
-    display: block;
-    width: 12rem;
-    height: 4rem;
+header {
+  background-color: $header_bg_color;
+  padding: 1rem 0;
+
+  .navbar {
+    display: flex;
+    align-items: center;
+    width: 88%;
     margin: 0 auto;
-    font-size: 0;
-    background: url('../../assets/images/new_logo_noback.png') no-repeat;
-    background-size: 100% 100%;
-  }
-  //css for nav
-  .nav {
-    margin-left: auto;
-    & > ul {
-      display: flex;
-      & > li {
-        position: relative;
-        margin-right: 2.3rem;
-        & > a::before {
-          content: '';
-          position: absolute;
-          left: 0;
-          width: 0;
-          height: 100%;
-          border-bottom: 1px solid $border_color;
-          transition: all .4s;
-        }
-        & > a:hover::before {
-          right: 0;
-          width: 100%;
-        }
-      }
+    height: 5rem;
+
+    //css for logo
+    .logo a {
+      display: block;
+      width: 12rem;
+      height: 4rem;
+      margin: 0 auto;
+      font-size: 0;
+      background: url('../../assets/images/logo.png') no-repeat;
+      background-size: 100% 100%;
     }
-    .nav-shop {
-      position: relative;
-      &>a::after {
-        content: "\e904";
-        font-family: $icon_font;
-        margin-left: .5rem;
-        color: $link_color;
+
+    //css for nav
+    .nav {
+      margin-left: auto;
+
+      &>ul {
+        display: flex;
+
+        &>li {
+          position: relative;
+          margin-right: 2.3rem;
+
+          &>a::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            width: 0;
+            height: 100%;
+            border-bottom: 1px solid $border_color;
+            transition: all .4s;
+          }
+
+          &>a:hover::before {
+            right: 0;
+            width: 100%;
+          }
+        }
       }
-      &:hover .nav-category{
-        width: 16rem;
-        opacity: 1;
-      }
-      .nav-category {
-        position: absolute;
-        overflow: hidden;
-        top: 2.075rem;
-        left: -1.23rem;
-        width: 0;
-        padding: 1rem 0;
-        white-space: nowrap;
-        opacity: 0;
-        border-radius: 5px;
-        box-shadow: 1px 3px 5px 1px $box_shadow_color;
-        transition: width .7s ease, opacity .3s ease;
-        li {
-          padding: 0 1.2rem;      
-          &:hover {
-            box-shadow: 0 2px 4px 1px $box_shadow_color;
+
+      .nav-shop {
+        position: relative;
+
+        &>a::after {
+          content: "\e904";
+          font-family: $icon_font;
+          margin-left: .5rem;
+          color: $link_color;
+        }
+
+        &:hover .nav-category {
+          width: 16rem;
+          opacity: 1;
+        }
+
+        .nav-category {
+          position: absolute;
+          overflow: hidden;
+          top: 2.475rem;
+          left: -1.23rem;
+          width: 0;
+          padding: 1rem 0;
+          white-space: nowrap;
+          opacity: 0;
+          border-radius: 5px;
+          box-shadow: 1px 3px 5px 1px $box_shadow_color;
+          transition: width .7s ease, opacity .3s ease;
+          background-color: rgb(246, 246, 246);
+          z-index: 997;
+          li {
+            padding: 0 1.2rem;
+
+            &:hover {
+              box-shadow: 1px 1px 5px $box_shadow_color;
+            }
           }
         }
       }
     }
-  }
-  //css for menu bar
-  .nav-toggle {
-    display: none;
-    i {
-      display: inline-block;
-      line-height: 4.35rem;
-      font-size: 1.75rem;
-    }
-  }
-  //css for icons
-  .navbar-icons {
-    margin-right: 1rem;
-    font-size: 1.75rem;
-    line-height: 4.35rem;
-    i {
-      margin-left: 1.2rem;
-      cursor: pointer;
-    }
-    .icon-cart {
-      position: relative;
-      .cart-count {
-        // display: none;
-        position: absolute;
-        width: 17px;
-        height: 17px;
-        line-height: 16px;
-        top: -12px;
-        right: -13px;
-        background: url('../../assets/images/bubble2.png') no-repeat;
-        background-size: 100% 100%;
-        text-align: center;
-        font-size: 3px;
-        font-weight: 600;
-        color: $link_color;
+
+    //css for menu bar
+    .nav-toggle {
+      display: none;
+
+      i {
+        display: inline-block;
+        line-height: 4.35rem;
+        font-size: 1.75rem;
+        cursor: pointer;
       }
+    }
+
+    //css for icons
+    .navbar-icons {
+      margin-right: 1rem;
+      font-size: 1.5rem;
+      line-height: 4.35rem;
+
+      i {
+        margin-left: 0.3rem;
+        cursor: pointer;
+      }
+
+      .icon-cart {
+        position: relative;
+
+        .cart-count {
+          position: absolute;
+          width: 17px;
+          height: 17px;
+          line-height: 16px;
+          top: -12px;
+          right: -13px;
+          background: url('../../assets/images/bubble.png') no-repeat;
+          background-size: 100% 100%;
+          text-align: center;
+          font-size: 3px;
+          font-weight: 600;
+          color: $link_color;
+        }
+      }
+    }
+
+    .webpage-mask {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background: rgba(0, 0, 0, .3);
+      z-index: 998;
+      transition: all .3s ease;
     }
   }
 }

@@ -1,12 +1,15 @@
 .sidebar {
-  position: fixed;
-  left: 0;
+  position: absolute;
+  left: -40%;
   top: 0;
+  z-index: 999;
   width: 35%;
   height: 100%;
-  background-color: pink;
-  margin: 2rem 2rem;
+  background-color: white;
+  padding: 2rem 2rem;
+  transition: all .5s ease;
   i {
+    cursor: pointer;
     display: block;
     margin-bottom: 2rem;
     color: rgb(92, 91, 91);
@@ -18,8 +21,11 @@
       border-bottom: 1px solid $border_color;
       cursor: pointer;
     }
-    .sidebar-secondnav {
-      margin: .7rem 0 .4rem .8rem;
+    .sidebar-subnav {
+      max-height: 0;
+      overflow: hidden;
+      padding-left: 0.8rem;
+      transition: max-height .7s ease;
     }
     .sidebar-shop {
       display: flex;
@@ -31,4 +37,10 @@
         }
     }
   }
+}
+.open-sidebar-subnav {
+  max-height: 10rem !important;
+}
+.open-side-bar {
+  left: 0 !important;
 }
