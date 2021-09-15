@@ -1,9 +1,59 @@
 .main-home {
-  // .home-banner {
-  //   position: relative;
-  //   // width: 100%;
-  //   // background: url('../../assets/images/banner.webp') no-repeat;
-  //   // background-size: cover;
-  //   // padding-bottom: 38.8099%;
-  // }
+  .home-contactus{
+    margin: 3.9rem 0;
+    font-family: $header_font;
+    text-align: center;
+    color: #454545;
+    p {
+      font-size: 1.1rem;
+      padding-bottom: 0.6rem;
+    }
+    h1 {
+      font-family: $font_body;
+      letter-spacing: 0.3rem;
+      margin-bottom: 1.5rem;
+    }
+    a {
+      border-bottom: 1px solid gray;
+      cursor: pointer;
+    }
+  }
+  .home-all-products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    
+    .home-product {
+      position: relative;
+      width: 23%;
+      min-width: 11%;
+      margin-bottom: 3rem;
+      border-radius: 100px; 
+      cursor: pointer;
+      .text-on-product {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: rgba(19, 18, 18, 0.4);
+        font-family: $font_body;
+        text-align: center;
+        text-transform: capitalize;
+        height: 3rem;
+        color: white;
+        width: 100%;
+        p {
+          line-height: 3rem;
+          font-size: 1.5rem;
+        }
+      }
+      img {
+        transition: all 0.2s ease;
+        &:hover {
+          transform: scale(1.007);
+        }
+      }
+    }
+    
+  }
 }

@@ -1,5 +1,4 @@
 import React, { useState, useRef } from 'react';
-// import { CSSTransition } from 'react-transition-group';
 
 const SideBar = React.forwardRef((props, ref) => {
   const [isOpenNav, setIsOpenNav] = useState(false)

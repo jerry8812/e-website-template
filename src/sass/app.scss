@@ -12,9 +12,11 @@
 @import './components/sidebar';
 @import './components/home.scss';
 @import './components/banner_slide.scss';
+@import './components/footer.scss';
 
 body {
   font-family: $header_font;
+  overflow-x: hidden;
 }
 i {
   font-family: $icon_font;

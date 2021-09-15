@@ -11,7 +11,7 @@ function NavBar() {
   const subNavgations = categories.map((category, index) => {
     return (
       <li key={index}>
-        <MyNavLink to="/home">{category}</MyNavLink>
+        <MyNavLink to={`/product/${category}`} onClick={()=>handleToggle()}>{category}</MyNavLink>
       </li>
     )
   })
@@ -44,7 +44,7 @@ function NavBar() {
         <div className="nav">
           <ul className="firstnav" >
             <li className="nav-shop" >
-              <MyNavLink to="/home" > shop </MyNavLink>
+              <MyNavLink to="/product/all" > shop </MyNavLink>
               <ul className="nav-category subnav" >
                 {subNavgations}
               </ul>

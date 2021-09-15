@@ -29,25 +29,44 @@
       top: 15% !important;
     }
   }
+  .home-all-products {
+    width: 96%;
+    margin: 0 auto;
+    .home-product{
+      width: 46% !important;
+    }
+  }
 }
-@media screen and (max-width: 500px) {
+
+// phone size
+@media screen and (max-width: 600px) {
   .navbar .sidebar {
     width: 76%;
     left: -76%;
+  }
+  .home-all-products {
+    flex-direction: column;
+    width: 70%;
+    .home-product {
+      width: 100% !important;
+    }
   }
 }
 
 html {
   font-size: 16px;
+  @media screen and (man-width: 320px) {
+    font-size: 5px;
+  }
 
   // Mobile Portrait
   @media screen and (min-width: 320px) {
-    font-size: 5px;
+    font-size: 6px;
   }
 
   // Mobile Landscape
   @media screen and (min-width: 500px) {
-    font-size: 8px;
+    font-size: 9px;
   }
 
   // Tablet Portrait

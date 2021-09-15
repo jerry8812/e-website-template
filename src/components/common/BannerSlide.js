@@ -2,8 +2,8 @@ import React, { Component } from 'react'
 
 import banner_women from '../../assets/images/banner/women.jpg'
 import banner_electronic from '../../assets/images/banner/electronic.jpg'
-import banner_jewelery from '../../assets/images/banner/jewelery.jpg'
-import banner_jewelery_a from '../../assets/images/banner/jewelery01.jpg'
+import banner_jewellery from '../../assets/images/banner/jewellery.jpg'
+import banner_jewellery_a from '../../assets/images/banner/jewellery01.jpg'
 
 
 export default class BannerSlide extends Component {
@@ -12,7 +12,7 @@ export default class BannerSlide extends Component {
     this.slideRef = React.createRef()
     this.state = {
       index: 0,
-      allImages: [banner_women, banner_electronic, banner_jewelery, banner_jewelery_a]
+      allImages: [banner_women, banner_electronic, banner_jewellery, banner_jewellery_a]
     }
   }
   slideTo = () => {
@@ -36,11 +36,13 @@ export default class BannerSlide extends Component {
       this.slideTo()
     }, 2500)
   }
-
+  componentWillUnmount() {
+    clearInterval(this.timer)
+  }
   render() {
     const {index, allImages} = this.state
     const style = {
-      width: (allImages.length + 1) * 100 + 'vw',
+      width: (allImages.length + 1) * 100 + '%',
       left: `-${index*100}%`,
       transition: `left 1s ease-out`
     }
