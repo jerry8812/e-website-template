@@ -11,7 +11,7 @@ function NavBar() {
   const subNavgations = categories.map((category, index) => {
     return (
       <li key={index}>
-        <MyNavLink to={`/product/${category}`} onClick={()=>handleToggle()}>{category}</MyNavLink>
+        <MyNavLink to={`/product/${category}`}>{category}</MyNavLink>
       </li>
     )
   })
@@ -27,13 +27,13 @@ function NavBar() {
           onClick={() => handleToggle()}
         >
         </div>
-        <div className="nav-toggle" onClick={() => handleToggle()}>
-          <i>  </i>
+        <div className="nav-toggle">
+          <i onClick={() => handleToggle()}>  </i>
         </div>
         <SideBar
           openSideBar={openSideBar}
           handleToggle={handleToggle}
-          subNavgations={subNavgations}
+          categories={categories}
           ref={sideBarRef}
         />
         <div className="logo">

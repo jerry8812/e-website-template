@@ -5,7 +5,7 @@ import NavBarContainer from './containers/NavBarContainer'
 import About from './pages/About'
 import Home from './pages/Home';
 import Footer from './components/common/Footer';
-import ProductContainer from './containers/ProductContianer';
+import Product from './pages/Product';
 
 import './sass/app.scss'
 
@@ -13,14 +13,14 @@ function App() {
   return (
     <React.Fragment>
       <Router>
-        <NavBarContainer/>
+        <NavBarContainer />
         <Switch>
           <Route exact path="/home" component={Home}/>
           <Route path="/about" component={About}/>
-          <Route path="/product/:type" component={ProductContainer}/>
+          <Route path="/product/:type" component={Product}/>
           <Redirect to="/home"/>
         </Switch>
-        <Footer/>
+        <Footer />
       </Router>
     </React.Fragment>
   );

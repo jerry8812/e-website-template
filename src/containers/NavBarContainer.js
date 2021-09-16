@@ -13,7 +13,10 @@ export default function NavBarContainer() {
       const response = await axios
         .get('https://fakestoreapi.com/products/categories')
         .catch(console.error())
-      dispach(setCategories(response.data))
+        const categories = response.data.map(category => {
+          return 'jewelery' === category ? 'jewellery': category
+        })
+      dispach(setCategories(categories))
     }
     fetchCategories()
   }, [dispach])

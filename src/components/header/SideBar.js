@@ -1,9 +1,16 @@
 import React, { useState, useRef } from 'react';
+import MyNavLink from '../common/MyNavLink';
 
 const SideBar = React.forwardRef((props, ref) => {
   const [isOpenNav, setIsOpenNav] = useState(false)
   const subnavRef = useRef()
-
+  const subNavgations = props.categories.map((category, index) => {
+    return (
+      <li key={index}>
+        <MyNavLink to={`/product/${category}`} onClick={()=>props.handleToggle()}>{category}</MyNavLink>
+      </li>
+    )
+  })
   const openSubNav = () => {
     subnavRef.current.classList.toggle('open-sidebar-subnav')
     setIsOpenNav(!isOpenNav)
@@ -19,7 +26,7 @@ const SideBar = React.forwardRef((props, ref) => {
             <i style={{ display: isOpenNav ? 'block' : 'none' }}></i>
           </div>
           <ul className="sidebar-subnav subnav" ref={subnavRef}>
-            {props.subNavgations}
+            {subNavgations}
           </ul>
         </li>
         <li><a href="/">about us</a></li>

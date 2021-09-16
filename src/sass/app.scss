@@ -13,9 +13,11 @@
 @import './components/home.scss';
 @import './components/banner_slide.scss';
 @import './components/footer.scss';
+@import './components/product.scss';
 
 body {
   font-family: $header_font;
+  color: $font_color;
   overflow-x: hidden;
 }
 i {
