@@ -1,5 +1,5 @@
-# E-Commerce website 
-**To View**: 
+# Responsive E-Commerce Website 
+**To View**: https://jerry8812.github.io/e-website-template/  
 **Development** **Tools**: V.S Code  
 ### 1. Overall
 The goal is to build a responsive e-commerce website template.
