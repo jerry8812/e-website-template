@@ -1,0 +1,2 @@
+(this["webpackJsonpe-website-template"]=this["webpackJsonpe-website-template"]||[]).push([[3],{73:function(e,t,n){"use strict";n.r(t),n.d(t,"default",(function(){return s}));n(0);var i=n(1);function s(){return Object(i.jsx)("div",{children:"About"})}}}]);
+//# sourceMappingURL=3.21821cd2.chunk.js.map
