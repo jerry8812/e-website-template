@@ -1,13 +1,20 @@
 import React, { useState, useRef } from 'react';
+import { useDispatch } from 'react-redux';
+import { setProductType } from '../../redux/actions/productActions'
 import MyNavLink from '../common/MyNavLink';
 
 const SideBar = React.forwardRef((props, ref) => {
+  const dispatch = useDispatch()
   const [isOpenNav, setIsOpenNav] = useState(false)
   const subnavRef = useRef()
+  const handleClick = (category) => {
+    props.handleToggle()
+    dispatch(setProductType(category))
+  }
   const subNavgations = props.categories.map((category, index) => {
     return (
       <li key={index}>
-        <MyNavLink to={`/product/${category}`} onClick={()=>props.handleToggle()}>{category}</MyNavLink>
+        <MyNavLink to={`/product/${category}`} onClick={()=>handleClick(category)}>{category}</MyNavLink>
       </li>
     )
   })
@@ -29,9 +36,9 @@ const SideBar = React.forwardRef((props, ref) => {
             {subNavgations}
           </ul>
         </li>
-        <li><a href="/">about us</a></li>
-        <li><a href="/">faq</a></li>
-        <li><a href="/">track your order</a></li>
+        <li><MyNavLink to="/home">about us</MyNavLink></li>
+        <li><MyNavLink to="/home">faq</MyNavLink></li>
+        <li><MyNavLink to="/home">track your order</MyNavLink></li>
       </ul>
     </div>
   )

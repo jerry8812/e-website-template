@@ -1,16 +1,23 @@
-import React, { useState } from 'react'
-import { useSelector } from 'react-redux'
+import React, { useState, useEffect } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
 
+import { fetchCategories } from '../../redux/actions/categoryActions'
+import { setProductType } from '../../redux/actions/productActions'
 import MyNavLink from '../common/MyNavLink'
 import SideBar from './SideBar'
 
 function NavBar() {
+  const dispatch = useDispatch()
+  useEffect(() => {
+    dispatch(fetchCategories())
+  }, [dispatch])
+
   const sideBarRef = React.createRef()
   const [openSideBar, setOpenSideBar] = useState(false)
   const categories = useSelector(state => state.allCategories.categories)
   const subNavgations = categories.map((category, index) => {
     return (
-      <li key={index}>
+      <li key={index} onClick={()=>dispatch(setProductType(category))}>
         <MyNavLink to={`/product/${category}`}>{category}</MyNavLink>
       </li>
     )
@@ -38,20 +45,20 @@ function NavBar() {
         />
         <div className="logo">
           <h1>
-            <a href="/" title="E.C.SHOP">E.C.SHOP</a>
+            <MyNavLink to="/home" title="E.C.SHOP">E.C.SHOP</MyNavLink>
           </h1>
         </div>
         <div className="nav">
           <ul className="firstnav" >
             <li className="nav-shop" >
-              <MyNavLink to="/product/all" > shop </MyNavLink>
+              <MyNavLink to="/product/all" onClick={()=>dispatch(setProductType('all'))}> shop </MyNavLink>
               <ul className="nav-category subnav" >
                 {subNavgations}
               </ul>
             </li>
             <li><MyNavLink to="/about">about</MyNavLink></li>
-            <li><MyNavLink to="/questions"> faq </MyNavLink></li>
-            <li><MyNavLink to="/track"> track your order </MyNavLink></li>
+            <li><MyNavLink to="/home"> faq </MyNavLink></li>
+            <li><MyNavLink to="/home"> track your order </MyNavLink></li>
           </ul>
         </div>
         <div className="navbar-icons">

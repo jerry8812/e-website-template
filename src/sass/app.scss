@@ -14,9 +14,11 @@
 @import './components/banner_slide.scss';
 @import './components/footer.scss';
 @import './components/product.scss';
+@import './components/filter.scss';
+@import './components/drop_down.scss';
 
 body {
-  font-family: $header_font;
+  font-family: $nav_second_font;
   color: $font_color;
   overflow-x: hidden;
 }

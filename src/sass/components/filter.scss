@@ -1,0 +1,15 @@
+.product-filter {
+  width: 26%;
+  ul {
+    margin-top: 1rem;
+    li {
+      color: $footer_color;
+    }
+  }
+}
+
+.active {
+  list-style-type: square;
+  color: $link_color !important;
+  transform: scale(1.01);
+}

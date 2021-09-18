@@ -1,30 +1,40 @@
-import React, {useEffect} from 'react'
+import React, { useEffect } from 'react'
 
-import { useParams } from 'react-router';
-import axios from 'axios';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
-import { setAllProducts } from '../redux/actions/productActions'
+import { DROPDOWN_LIST } from '../constants';
+import ProductListing from '../components/product/ProductListing';
+import Filter from '../components/product/Filter';
+import DropDown from '../components/common/DropDown';
+import { fetchProducts } from '../redux/actions/productActions'
 
 export default function Product() {
-  // const products = useSelector(state => state.allProducts.products)
-  const { type } = useParams()
   const dispatch = useDispatch()
-  
+  const products = useSelector(state => state.allProducts.products)
+  const productType = useSelector(state => state.productType.productType)
+
+  const sortByItemChanged = data => data
+
   useEffect(() => {
-    const getAllProducts = async () => {
-      const response = await axios
-        .get('https://fakestoreapi.com/products')
-        .catch(console.error())
-      dispatch(setAllProducts(response.data))
-    }
-    getAllProducts()
-  }, [dispatch])
+    const url = productType === 'all' ? '/products' : `/products/category/${productType}`
+    dispatch(fetchProducts(url))
+  }, [dispatch, productType])
 
   return (
     <div className="main-product">
-      <div className="main-product-category">
-        <h5>{type}</h5>
+      <div className="product-category">
+        <h5>{productType}</h5>
+      </div>
+      <div className="products-sort-by">
+        <p>{products.length} items found</p>
+        <DropDown
+          onChange={sortByItemChanged}
+          dropDownList={DROPDOWN_LIST}
+        />
+      </div>
+      <div className="product-filter-products">
+        <Filter category={productType} />
+        <ProductListing products={products} />
       </div>
     </div>
   )
