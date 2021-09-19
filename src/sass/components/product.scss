@@ -1,5 +1,5 @@
 .main-product {
-  width: 90%;
+  width: 86%;
   margin: 1rem auto;
   .product-category {
     position: relative;
@@ -21,8 +21,55 @@
   }
   .product-filter-products {
     display: flex;
-    // background-color: pink;
-    height: 50rem;
     margin: 1rem 2rem;
+  }
+  .product-productlisting {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    .singe-product {
+      width: 23%;
+      padding: 1rem 0 0;
+      // padding-bottom: 1%;
+      border: 2px solid #838181;
+      border-radius: 4px;
+      margin-bottom: 2.7rem;
+      overflow: hidden;
+      cursor: pointer;
+      .single-product-image {
+        width: 63%;
+        height: 12.7rem;
+        margin: 0 auto 1.2rem;
+        img {
+          height: 100%;
+        }
+      }
+      .single-product-info {
+        padding: 0.8rem .8rem 0.6rem;
+        border-top: 1px solid #d2d2d2;
+
+        div:nth-child(1) {
+          overflow: hidden;
+          text-overflow: ellipsis;
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 2;
+          font-size: 1.11rem;
+          height: 3rem;
+          line-height: 1.5rem;
+        }
+        div:nth-child(2) {
+          font-size: 1.4rem;
+          height: 1.65rem;
+          margin-top: .6rem;
+        }
+        div:nth-child(3) {
+          font-size: .8rem;
+          text-transform: capitalize;
+        }
+      }
+      
+    }
   }
 }

@@ -1,9 +1,26 @@
 .product-filter {
   width: 26%;
   ul {
-    margin-top: 1rem;
+    margin: 1rem 0;
     li {
       color: $footer_color;
+    }
+  }
+  .filter-all-colors {
+    display: flex;
+    width: 70%;
+    flex-wrap: wrap;
+    margin: 1rem 0;
+    div {
+      width: 2rem;
+      height: 2rem;
+      margin: 0 1rem 1rem 0;
+      border-radius: 50%;
+      transition: all 0.2s ease;
+      &:hover {
+        cursor: pointer;
+        transform: scale(1.06);
+      }
     }
   }
 }

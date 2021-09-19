@@ -1,18 +1,24 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 
 import BannerSlide from '../components/common/BannerSlide'
+import { setProductType } from '../redux/actions/productActions'
 
 import womenCloth from '../assets/images/pictures/women.jpg'
 import electronics from '../assets/images/pictures/electronics.jpg'
 import menCloth from '../assets/images/pictures/men-clothing.jpg'
 import jewellery from '../assets/images/pictures/jewellery.jpg'
 
-export default function Home() {
+export default function Home(props) {
+  const dispatch = useDispatch()
   const productImage = [electronics, jewellery, menCloth, womenCloth]
   const categories = useSelector(state => state.allCategories.categories)
+  const navigateTo = (category) => {
+    dispatch(setProductType(category))
+    props.history.push(`/product/${category}`)
+  }
   const products = categories.map((category, index) => {
-    return <div key={index} className="home-product">
+    return <div key={index} className="home-product" onClick={()=> navigateTo(category)}>
       <img src={productImage[index]} alt={category}></img>
       <div className="text-on-product">
         <p>Shop {category}</p>

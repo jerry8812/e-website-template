@@ -8,7 +8,7 @@
   }
 }
 // Tablet Portrait
-@media screen and (max-width: 1000px){
+@media screen and (max-width: 850px){
   .navbar {
     &>div {
       flex: 1;
@@ -23,6 +23,7 @@
       display: flex;
       justify-content: flex-end;
     }
+
   }
   .banner{
     .banner-shop {
@@ -35,6 +36,24 @@
     .home-product{
       width: 46% !important;
     }
+  }
+  .singe-product {
+    width: 31% !important;
+    .single-product-image {
+      height: 17rem !important;
+    }
+    .single-product-info {
+      div:nth-child(1) {
+        height: 4.4rem !important;
+        line-height: 2.2rem !important;
+      }
+    }
+  } 
+  .drop-down-list {
+    display: none;
+  }
+  .product-filter {
+    display: none;
   }
 }
 
@@ -51,34 +70,64 @@
       width: 100% !important;
     }
   }
+  
+  .singe-product {
+    width: 47% !important;
+    .single-product-image { 
+      height: 21rem !important;
+    }
+    .single-product-info {
+      div:nth-child(1) {
+        height: 4.8rem !important;
+        line-height: 2.4rem !important;
+      }
+    }
+  } 
+  
 }
 
 html {
   font-size: 16px;
   @media screen and (man-width: 320px) {
-    font-size: 5px;
+    font-size: 4px;
   }
 
   // Mobile Portrait
   @media screen and (min-width: 320px) {
     font-size: 6px;
   }
-
+   // Mobile Landscape
+   @media screen and (min-width: 500px) {
+    font-size: 5px;
+  }
   // Mobile Landscape
-  @media screen and (min-width: 500px) {
-    font-size: 9px;
+  @media screen and (min-width: 600px) {
+    font-size: 6px;
+  }
+  // Mobile Landscape
+  @media screen and (min-width: 700px) {
+    font-size: 7px;
   }
 
   // Tablet Portrait
-  @media screen and (min-width: 750px) {
-    font-size: 11px;
+  @media screen and (min-width: 800px) {
+    font-size: 8px;
   }
-
+  // Tablet Landscape
+  @media screen and (min-width: 900px) {
+    font-size: 9px;
+  }// Tablet Landscape
+  @media screen and (min-width: 1000px) {
+    font-size: 10px;
+  }
   // Tablet Landscape
   @media screen and (min-width: 1100px) {
+    font-size: 11px;
+  }
+  // Small Laptops
+  @media screen and (min-width: 1200px) {
     font-size: 12px;
   }
-
   // Small Laptops
   @media screen and (min-width: 1400px) {
     font-size: 14px;
@@ -86,7 +135,7 @@ html {
 
   // Large Monitors
   @media screen and (min-width: 1600px) {
-    font-size: 18px;
+    font-size: 16px;
   }
 }
 
