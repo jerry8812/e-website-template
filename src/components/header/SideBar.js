@@ -29,8 +29,7 @@ const SideBar = React.forwardRef((props, ref) => {
         <li onClick={() => openSubNav()}>
           <div className="sidebar-shop">
             shop
-            <i style={{ display: isOpenNav ? 'none' : 'block' }}></i>
-            <i style={{ display: isOpenNav ? 'block' : 'none' }}></i>
+            <i>{isOpenNav?'':''}</i>
           </div>
           <ul className="sidebar-subnav subnav" ref={subnavRef}>
             {subNavgations}

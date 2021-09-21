@@ -26,14 +26,12 @@
   .sort-by-items {
     position: absolute;
     top: 3rem;
-    right: -100%;
     width: 105%;
     padding: .7rem 1.6rem;
     border-radius: 5px;
     box-shadow: 3px 2px 5px 1px $box_shadow_color;
     transition: all .7s ease;
     background-color: rgb(246, 246, 246);
-    opacity: 0;
     // .triangle-on-top {
     //   position: absolute;
     //   // background-color: red;
@@ -53,9 +51,4 @@
       }
     }
   }
-}
-
-.sort-by-items-show {
-  right: 0 !important;
-  opacity: 1 !important;
 }

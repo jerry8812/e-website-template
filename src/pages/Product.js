@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { DROPDOWN_LIST } from '../constants';
 import ProductListing from '../components/product/ProductListing';
 import Filter from '../components/product/Filter';
-import DropDown from '../components/common/DropDown';
+import MyDropDown from '../components/common/MyDropDown';
 import { fetchProducts } from '../redux/actions/productActions'
 
 export default function Product() {
@@ -27,7 +27,7 @@ export default function Product() {
       </div>
       <div className="products-sort-by">
         <p>{products.length} items found</p>
-        <DropDown
+        <MyDropDown
           onChange={sortByItemChanged}
           dropDownList={DROPDOWN_LIST}
         />
